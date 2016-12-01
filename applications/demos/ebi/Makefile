@@ -3,21 +3,21 @@
 CC := arm-linux-gcc
 STRIP := arm-linux-strip
 
-TARGET = cap2lcm
-SRCS := cap2lcm.c
-LIBS= -lc -lgcc -lc -lpthread
+TARGET = ebi_demo
+SRCS := ebi.c
 
-all: 
+LIBS= -lc -lgcc -lc
+
+all:
 	$(CC) -static $(SRCS) -o $(TARGET)
-	$(STRIP) $(TARGET) 
+	$(STRIP) $(TARGET)
 
 clean:
-	rm -f *.o 
-	rm -f *.x 
+	rm -f *.o
+	rm -f *.x
 	rm -f *.flat
 	rm -f *.map
 	rm -f temp
 	rm -f *.img
-	rm -f $(TARGET)	
+	rm -f $(TARGET)
 	rm -f *.gdb
-	rm -f *.bak
